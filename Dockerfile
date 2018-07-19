@@ -37,7 +37,6 @@ RUN apt update && apt install tzdata -y \
 	wget \ 
 	cron && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* 
 
-
 RUN printf '<VirtualHost *:80>\n\
 	DocumentRoot /var/www/html/glpi\n\
 	<Directory /var/www/html/glpi>\n\
@@ -58,7 +57,6 @@ RUN printf '<Directory /var/www/html/glpi>\n\
 </Directory>  '\
 >> /etc/apache2/conf-available/glpi2.conf
 
-
 RUN	a2enconf glpi.conf \
 	&& a2enconf glpi2.conf \
 	&& echo "*/5 * * * * /usr/bin/php /var/www/html/glpi/front/cron.php &>/dev/null"  > /var/spool/cron/crontabs/root \
@@ -68,7 +66,6 @@ RUN	a2enconf glpi.conf \
 ## Definindo a porta de acesso ao serviço
 EXPOSE 80
 
-
 ADD https://github.com/glpi-project/glpi/releases/download/$LAST_RELEASE/glpi-$GLPI_VERSION.tgz ./
 ADD https://forge.glpi-project.org/attachments/download/2216/GLPI-dashboard_plugin-0.9.0_GLPI-9.2.x.tar.gz ./
 RUN tar -xzf  glpi-$GLPI_VERSION.tgz -C /var/www/html  \
@@ -77,12 +74,8 @@ RUN tar -xzf  glpi-$GLPI_VERSION.tgz -C /var/www/html  \
 	&& chown www-data. -Rf /var/www/html/glpi  \
 	&& rm -rf   glpi-$GLPI_VERSION.tgz  GLPI-dashboard_plugin-0.9.0_GLPI-9.2.x.tar.gz
 
-
-
 ## Definindo o scrit para executar no boot do container
 CMD /usr/bin/glpi
  
-
 CMD ["-D", "FOREGROUND"]
 ENTRYPOINT ["apachectl"]
-
