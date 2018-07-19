@@ -4,6 +4,7 @@ Hoje  demonstraremos como  provisionar o GLPI no Docker, utilizaremos também o 
 
 
 
+​     
 
 
 #### Iniciando o Swarm
@@ -13,6 +14,8 @@ docker swarm init
 ```
 
 
+​     
+
 
 #### Inicializando o rede
 
@@ -20,6 +23,8 @@ docker swarm init
 docker network create -d overlay net
 ```
 
+
+​     
 
 
 #### Criando uma  imagem
@@ -37,6 +42,8 @@ docker  build \
 -t=ferreirarocha/glpi:9.3 .
 ```
 
+
+​     
 
 
 #### Criand  o serviço Traefik - Proxy Reverso
@@ -58,10 +65,15 @@ traefik:camembert \
 ```
 
 
+​     
+
 
 #### Criando  o serviço  MariaDB  - Banco de Dados
 
 Estamos usando a imagem oficial do MariaDB para esse projeto, mas  no  mundo docker   não há um consenso sobre a segurança do uso de  banco de dados   executando via container, seu uso é muitas vezes é indicado  para local onde não  há uma carga de trabalho excessiva.
+
+
+​     
 
 
 
@@ -103,8 +115,7 @@ ferreirarocha/glpi:9.3
 ```
 
 
-
-
+​     
 
 #### Criando o serviço para o Portainer
 
@@ -112,6 +123,8 @@ ferreirarocha/glpi:9.3
 docker volume create portainer_data
 ```
 
+
+​     
 
 
 ```
@@ -130,6 +143,7 @@ portainer/portainer \
 ```
 
 
+​     
 
 #### Configurando o DNS
 
@@ -142,6 +156,7 @@ Abra-o e insira o  novo dominio
 nano /etc/hosts
 ```
 
+​     
 
 
 Ficará algo como na figura abaixo
@@ -152,11 +167,15 @@ Ficará algo como na figura abaixo
 ```
 
 
+​     
+
 
 A  próxima etapa  e tão esperada é acessar o serviço via  web, e consumir o serviço, nesse caso
 
 http://suporte.alfabe.ch
 
+
+​     
 
 
 Conclua o processo de instalação do GLPI
