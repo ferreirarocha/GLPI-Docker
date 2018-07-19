@@ -1,5 +1,5 @@
-Esse projeto cria imagens do GLPI executando sob o Ubuntu 18.04 LTS
-faz uso do docker  swarm e  o traefik para trabalhar como proxy reverso, tanto  o docker  swarm quanto o traefik são opcionais mas o adotamos  para trabalhar como cluster  e  proxy reverso em nosso ambiente.
+Esse projeto cria imagens do GLPI executando sob o Ubuntu 18.04 LTS.
+Fazendo uso do docker  swarm e  o traefik para trabalhar como proxy reverso, tanto  o docker  swarm quanto o traefik são opcionais mas o adotamos  para trabalhar como cluster  e  proxy reverso em nosso ambiente.
 
 
 
