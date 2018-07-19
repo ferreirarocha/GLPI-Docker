@@ -5,6 +5,8 @@ Para  buildar uma imagems execute a seguitne instrução em seu docker  host.
 Altere a tag  ferreirarocha para outra qualquer caso  desejar.
 
 
+
+
 ```
 docker  build \
 --build-arg LAST_RELEASE=9.3.0 \
