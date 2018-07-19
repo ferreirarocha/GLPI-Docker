@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 LABEL maintainer="marcos.fr.rocha@gmail.com"
+ENV GLPI_VERSION 9.3
+ENV LAST_RELEASE 9.3.0
 
-ARG GLPI_VERSION
-ARG LAST_RELEASE                                                     
 ENV PATH="/opt/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 RUN apt update && apt install tzdata -y \
