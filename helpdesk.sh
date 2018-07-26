@@ -11,7 +11,7 @@ echo -e "Provisionameto Helpdesk GLPI  no Docker \n"
 
 echo -e "
 install -- Instala o helpldesk, Traefik, Rancher Agent, Portainer, Banco de dados
-remove  -- Remove o arquivo de configuração do GLPI
+remove  -- Remove o arquivo de configuração do GLPI, execute esse comando ao concluir a  instalaçaõ do GLPI.
 	"
 
 
