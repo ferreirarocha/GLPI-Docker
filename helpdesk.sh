@@ -4,12 +4,10 @@ RETVAL=0
 case "$1" in
    "") 
 
-# Este script envia automatiza a geração e inserção de chave  pública em um servidor ssh.
-# Para ficar mais comodo envie esse arquivo para o diretório /usr/bin
+# Este script provisiona o Helpdesk GLPi com traefik, rancher, portainer, e MariaDB.
 # Uso 
 
-# acesso vyos vyos@192.168.1.1
-echo -e "\Provisionameto Helpdesk GLPI  no Docker \n"
+echo -e "Provisionameto Helpdesk GLPI  no Docker \n"
 
 echo -e "
 install -- Instala o helpldesk, Traefik, Rancher Agent, Portainer, Banco de dados
